@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Memleak::VERSION
   s.authors     = ["Sasha Bichkov"]
   s.email       = ["aleksandar.bichkov@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Memleak."
-  s.description = "TODO: Description of Memleak."
+  s.homepage    = "https://github.com/sasha-bichkov/memleak"
+  s.summary     = "The rails engine for profiling memory leaks."
+  s.description = "The rails engine for profiling memory leaks."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
