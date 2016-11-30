@@ -13,6 +13,8 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'memory_profiler'
+
 group :development do
   gem 'quiet_assets'
   gem 'better_errors', '2.1.1'
