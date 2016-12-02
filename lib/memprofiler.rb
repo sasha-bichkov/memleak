@@ -11,12 +11,11 @@ class MemProfiler
       app_call(env)
     else
       snapshot = make_memory_snapshot env
-      request_params = env["action_dispatch.request.path_parameters"]
-
+      request_params = get_request_path_params env
       save_memory_snapshot snapshot, request_params
-    end
 
-    [@status, @headers, @response]
+      [@status, @headers, @response]
+    end
   end
 
   private
@@ -43,8 +42,13 @@ class MemProfiler
     MemorySnapshot.create! action: action, controller: controller
   end
 
-  # todo: there is any way to get controller class directly?
+  # todo: is there any way to get controller class directly?
   def format_controller(controller)
     controller.gsub("#{ENGINE_TITLE}/", '').capitalize << 'Controller'
   end
+
+  def get_request_path_params(env)
+    env["action_dispatch.request.path_parameters"]
+  end
+
 end
