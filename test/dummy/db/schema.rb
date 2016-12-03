@@ -11,13 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201121552) do
+ActiveRecord::Schema.define(version: 20161203085512) do
 
   create_table "memory_snapshots", force: :cascade do |t|
-    t.string   "controller", null: false
-    t.string   "action",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "controller",                                    null: false
+    t.string   "action",                                        null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.integer  "total_allocated_objects", limit: 8, default: 0, null: false
+    t.integer  "total_allocated_memsize", limit: 8, default: 0, null: false
+    t.integer  "total_retained_objects",  limit: 8, default: 0, null: false
+    t.integer  "total_retained_memsize",  limit: 8, default: 0, null: false
   end
 
 end
