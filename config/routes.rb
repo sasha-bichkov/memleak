@@ -1,4 +1,4 @@
 Memleak::Engine.routes.draw do
-  root to: 'home#index'
-  get '*path', to: 'home#index'
+  root to: 'memleak#index'
+  get '*path', to: 'memleak#index'
 end

@@ -1,0 +1,21 @@
+h1 Memleak
+
+table
+  thead
+    tr
+      th id
+      th Controller#action
+      th Total allocated objects
+      th Total allocated memsize
+      th Total retained objects
+      th Total retained memsize
+
+  tbody
+    - @memory_snapshots.each do |snapshot|
+      tr
+        td = snapshot.id
+        td = snapshot_request snapshot
+        td = snapshot.total_allocated_objects
+        td = snapshot.total_allocated_memsize
+        td = snapshot.total_retained_objects
+        td = snapshot.total_retained_memsize

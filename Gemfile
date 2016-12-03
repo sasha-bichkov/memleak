@@ -13,6 +13,7 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
+gem 'slim'
 gem 'memory_profiler'
 
 group :development do
