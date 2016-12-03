@@ -14,6 +14,7 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem 'slim'
+gem 'react-rails'
 gem 'memory_profiler'
 
 group :development do
