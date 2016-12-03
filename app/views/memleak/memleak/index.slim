@@ -9,6 +9,7 @@ table
       th Total allocated memsize
       th Total retained objects
       th Total retained memsize
+      th Created At
 
   tbody
     - @memory_snapshots.each do |snapshot|
@@ -19,3 +20,4 @@ table
         td = snapshot.total_allocated_memsize
         td = snapshot.total_retained_objects
         td = snapshot.total_retained_memsize
+        td = format_time snapshot.created_at
