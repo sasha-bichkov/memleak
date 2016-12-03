@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let snapshots = response.data;
     let data = snapshots.map((snapshot, index) => {
       return {
-        name: index + 1,
-        total_allocated_memsize: snapshot.total_allocated_memsize,
-        total_retained_memsize: snapshot.total_retained_memsize
+        id: index + 1,
+        total_allocated_memsize: bytes_to_megabytes(snapshot.total_allocated_memsize),
+        total_retained_memsize: bytes_to_megabytes(snapshot.total_retained_memsize)
       }
     });
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return (
           <LineChart width={1200} height={600} data={data}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}>
-             <XAxis dataKey="name"/>
+             <XAxis dataKey="id"/>
              <YAxis/>
              <CartesianGrid strokeDasharray="3 3"/>
              <Legend />
@@ -42,3 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ReactDOM.render(<SimpleLineChart />, chart);
   });
 });
+
+const bytes_to_megabytes = (size) => {
+  return size / 1024 / 1024;
+}
