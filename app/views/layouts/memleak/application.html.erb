@@ -8,9 +8,17 @@
 </head>
 <body>
 
-<div id="memleak"></div>
-<div class="ct-chart"></div>
-<%= yield %>
+  <div id="memleak"></div>
+  <div id="chart" class="chart"></div>
+  <%= yield %>
 
+  <!-- todo: remove it later, of course -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-with-addons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom-server.min.js"></script>
+  <!-- todo: remove it later, of course -->
+
+  <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@ module Dummy
 
     config.middleware.use MemProfiler
     config.paths['db/migrate'] = Memleak::Engine.paths['db/migrate'].existent
+    config.react.addons = true
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
