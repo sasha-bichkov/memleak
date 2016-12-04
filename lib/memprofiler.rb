@@ -8,19 +8,17 @@ class MemProfiler
 
   def call(env)
     if is_assets_path?(env)
-      app_call(env)
+      continue_request env
     else
-      snapshot = make_memory_snapshot env
-      request_params = get_request_path_params env
-      save_memory_snapshot snapshot, request_params
-
-      [@status, @headers, @response]
+      make_memory_snapshot env
     end
+
+    [@status, @headers, @response]
   end
 
   private
 
-  def app_call(env)
+  def continue_request(env)
     @status, @headers, @response = @app.call(env)
   end
 
@@ -29,12 +27,17 @@ class MemProfiler
   end
 
   def make_memory_snapshot(env)
+    snapshot = get_request_memory_snapshot env
+    request_params = get_request_path_params env
+    save_memory_snapshot snapshot, request_params
+  end
+
+  def get_request_memory_snapshot(env)
     MemoryProfiler.report do
-      app_call(env)
+      continue_request(env)
     end
   end
 
-  # todo: variable snapshot is still not being used.
   def save_memory_snapshot(snapshot, request_params)
     action = request_params[:action]
     controller = format_controller request_params[:controller]
