@@ -1,7 +1,5 @@
 class MemProfiler
 
-  ENGINE_TITLE = 'memleak'
-
   def initialize(app)
     @app = app
   end
@@ -64,7 +62,7 @@ class MemProfiler
 
   # todo: is there any way to get controller class directly?
   def format_controller(controller)
-    controller.gsub("#{ENGINE_TITLE}/", '').capitalize << 'Controller'
+    controller.gsub(/.*\//, '').capitalize << 'Controller'
   end
 
   def get_request_path_params(env)
