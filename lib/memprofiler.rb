@@ -1,11 +1,13 @@
 class MemProfiler
 
+  ENGINE_TITLE = 'memleak'
+
   def initialize(app)
     @app = app
   end
 
   def call(env)
-    if is_assets_path?(env)
+    if is_assets_path?(env) or is_engine_action?(env)
       continue_request env
     else
       make_memory_snapshot env
@@ -22,6 +24,10 @@ class MemProfiler
 
   def is_assets_path?(env)
     env['REQUEST_PATH'].match /^\/assets\//
+  end
+
+  def is_engine_action?(env)
+    env['REQUEST_PATH'].match /^\/#{ENGINE_TITLE}/
   end
 
   def make_memory_snapshot(env)
