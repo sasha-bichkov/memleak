@@ -11,17 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203085512) do
+ActiveRecord::Schema.define(version: 20161205161009) do
 
   create_table "memory_snapshots", force: :cascade do |t|
-    t.string   "controller",                                    null: false
-    t.string   "action",                                        null: false
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.integer  "total_allocated_objects", limit: 8, default: 0, null: false
-    t.integer  "total_allocated_memsize", limit: 8, default: 0, null: false
-    t.integer  "total_retained_objects",  limit: 8, default: 0, null: false
-    t.integer  "total_retained_memsize",  limit: 8, default: 0, null: false
+    t.string   "controller",                                           null: false
+    t.string   "action",                                               null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.integer  "total_allocated_objects",       limit: 8, default: 0,  null: false
+    t.integer  "total_allocated_memsize",       limit: 8, default: 0,  null: false
+    t.integer  "total_retained_objects",        limit: 8, default: 0,  null: false
+    t.integer  "total_retained_memsize",        limit: 8, default: 0,  null: false
+    t.text     "allocated_memory_by_gem",                 default: "", null: false
+    t.text     "allocated_objects_by_gem",                default: "", null: false
+    t.text     "retained_memory_by_gem",                  default: "", null: false
+    t.text     "retained_objects_by_gem",                 default: "", null: false
+    t.text     "allocated_memory_by_file",                default: "", null: false
+    t.text     "allocated_objects_by_file",               default: "", null: false
+    t.text     "retained_memory_by_file",                 default: "", null: false
+    t.text     "retained_objects_by_file",                default: "", null: false
+    t.text     "allocated_memory_by_location",            default: "", null: false
+    t.text     "allocated_objects_by_location",           default: "", null: false
+    t.text     "retained_memory_by_location",             default: "", null: false
+    t.text     "retained_objects_by_location",            default: "", null: false
+    t.text     "allocated_memory_by_class",               default: "", null: false
+    t.text     "allocated_objects_by_class",              default: "", null: false
+    t.text     "retained_memory_by_class",                default: "", null: false
+    t.text     "retained_objects_by_class",               default: "", null: false
   end
 
 end

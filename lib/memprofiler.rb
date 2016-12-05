@@ -46,24 +46,35 @@ class MemProfiler
     action = request_params[:action]
     controller = format_controller request_params[:controller]
 
-    # p snapshot.allocated_memory_by_gem
-    # p snapshot.allocated_objects_by_gem
-
-    # p snapshot.allocated_memory_by_file
-    # p snapshot.allocated_objects_by_file
-
-    # p snapshot.allocated_memory_by_location
-    # p snapshot.allocated_objects_by_location
-
-    # p snapshot.allocated_memory_by_class
-    # p snapshot.allocated_objects_by_class
-
-    MemorySnapshot.create! action: action,
+    MemorySnapshot.create!(
+      action: action,
       controller: controller,
+
       total_allocated_objects: snapshot.total_allocated,
       total_allocated_memsize: snapshot.total_allocated_memsize,
       total_retained_objects: snapshot.total_retained,
-      total_retained_memsize: snapshot.total_retained_memsize
+      total_retained_memsize: snapshot.total_retained_memsize,
+
+      allocated_memory_by_gem: snapshot.allocated_memory_by_gem,
+      allocated_objects_by_gem: snapshot.allocated_objects_by_gem,
+      retained_memory_by_gem: snapshot.retained_memory_by_gem,
+      retained_objects_by_gem: snapshot.retained_objects_by_gem,
+
+      allocated_memory_by_file: snapshot.allocated_memory_by_file,
+      allocated_objects_by_file: snapshot.allocated_objects_by_file,
+      retained_memory_by_file: snapshot.retained_memory_by_file,
+      retained_objects_by_file: snapshot.retained_objects_by_file,
+
+      allocated_memory_by_location: snapshot.allocated_memory_by_location,
+      allocated_objects_by_location: snapshot.allocated_objects_by_location,
+      retained_memory_by_location: snapshot.retained_memory_by_location,
+      retained_objects_by_location: snapshot.retained_objects_by_location,
+
+      allocated_memory_by_class: snapshot.allocated_memory_by_class,
+      allocated_objects_by_class: snapshot.allocated_objects_by_class,
+      retained_memory_by_class: snapshot.retained_memory_by_class,
+      retained_objects_by_class: snapshot.retained_objects_by_class
+    )
   end
 
   # todo: is there any way to get controller class directly?
