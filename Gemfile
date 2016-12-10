@@ -16,6 +16,7 @@ gemspec
 gem 'slim'
 gem 'react-rails'
 gem 'memory_profiler'
+gem 'browserify-rails'
 
 group :development do
   gem 'quiet_assets'
