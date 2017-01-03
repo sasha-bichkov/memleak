@@ -1,0 +1,90 @@
+h1 Snapshot #{@snapshot.id} 
+
+table
+  tr
+    td Action
+    td = @snapshot.action
+
+  tr
+    td Controller
+    td = @snapshot.controller
+
+  tr
+    td Total_allocated_objects
+    td = @snapshot.total_allocated_objects
+
+  tr
+    td Total_allocated_memsize
+    td = @snapshot.total_allocated_memsize
+
+  tr
+    td Total_retained_objects
+    td = @snapshot.total_retained_objects
+
+  tr
+    td Total_retained_memsize
+    td = @snapshot.total_retained_memsize
+
+  tr
+    td Allocated_memory_by_gem
+    td = @snapshot.allocated_memory_by_gem
+
+  tr
+    td Allocated_objects_by_gem
+    td = @snapshot.allocated_objects_by_gem
+
+  tr
+    td Retained_memory_by_gem
+    td = @snapshot.retained_memory_by_gem
+
+  tr
+    td Retained_objects_by_gem
+    td = @snapshot.retained_objects_by_gem
+
+  tr
+    td Allocated_memory_by_file
+    td = @snapshot.allocated_memory_by_file
+
+  tr
+    td Allocated_objects_by_file
+    td = @snapshot.allocated_objects_by_file
+
+  tr
+    td Retained_memory_by_file
+    td = @snapshot.retained_memory_by_file
+
+  tr
+    td Retained_objects_by_file
+    td = @snapshot.retained_objects_by_file
+
+  tr
+    td Allocated_memory_by_location
+    td = @snapshot.allocated_memory_by_location
+
+  tr
+    td Allocated_objects_by_location
+    td = @snapshot.allocated_objects_by_location
+
+  tr
+    td Retained_memory_by_location
+    td = @snapshot.retained_memory_by_location
+
+  tr
+    td Retained_objects_by_location
+    td = @snapshot.retained_objects_by_location
+
+  tr
+    td Allocated_memory_by_class
+    td = @snapshot.allocated_memory_by_class
+
+  tr
+    td Allocated_objects_by_class
+    td = @snapshot.allocated_objects_by_class
+
+  tr
+    td Retained_memory_by_class
+    td = @snapshot.retained_memory_by_class
+
+  tr
+    td Retained_objects_by_class
+    td = @snapshot.retained_objects_by_class

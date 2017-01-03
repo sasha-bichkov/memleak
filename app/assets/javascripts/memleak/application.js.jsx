@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const { LineChart, Line, XAxis, Tooltip, YAxis, CartesianGrid, Legend } = Recharts;
 
-  const request = axios.get(`memleak/snapshots/${location.search}`);
+  const request = axios.get(`snapshots/${location.search}`);
 
   request.then((response) => {
     let snapshots = response.data;
