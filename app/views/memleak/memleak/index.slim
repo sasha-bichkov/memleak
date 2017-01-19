@@ -14,7 +14,7 @@ table
   tbody
     - @memory_snapshots.each do |snapshot|
       tr
-        td = snapshot.id
+        td = link_to "##{snapshot.id}", snapshot_path(snapshot)
         td = snapshot_request snapshot
         td = snapshot.total_allocated_objects
         td = snapshot.total_allocated_memsize
