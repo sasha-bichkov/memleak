@@ -1,5 +1,6 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
+
 export default class StackedAreaChart extends React.Component {
   render () {
     const { data, area_1, area_2 } = this.props;
