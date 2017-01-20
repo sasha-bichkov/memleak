@@ -7,8 +7,8 @@ export default class SimpleLineChart extends React.Component {
 
     return (
       <LineChart
-        width={1200}
-        height={600}
+        width={500}
+        height={300}
         margin={{top: 5, right: 30, left: 20, bottom: 5}}
         data={data}
       >
