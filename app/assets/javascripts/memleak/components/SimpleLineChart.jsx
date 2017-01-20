@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, Tooltip, YAxis, CartesianGrid, Legend } from 'r
 
 export default class SimpleLineChart extends React.Component {
   render () {
-    const { data } = this.props;
+    const { data, line_1, line_2 } = this.props;
 
     return (
       <LineChart
@@ -17,8 +17,8 @@ export default class SimpleLineChart extends React.Component {
          <CartesianGrid strokeDasharray="3 3"/>
          <Legend />
          <Tooltip />
-         <Line type="monotone" dataKey="total_allocated_memsize" stroke="#ff0000" />
-         <Line type="monotone" dataKey="total_retained_memsize" stroke="#0000ff" />
+         <Line type="monotone" dataKey={line_1} stroke="#ff0000" />
+         <Line type="monotone" dataKey={line_2} stroke="#0000ff" />
       </LineChart>
     );
   }

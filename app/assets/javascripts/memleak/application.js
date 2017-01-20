@@ -21,6 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const chart = document.getElementById('chart');
-    ReactDOM.render(<StackedAreaChart data={data} key_1={'total_allocated_memsize'} key_2={'total_retained_memsize'} />, chart);
+    ReactDOM.render(<StackedAreaChart data={data} area_1={'total_allocated_memsize'} area_2={'total_retained_memsize'} />, chart);
   });
 });
