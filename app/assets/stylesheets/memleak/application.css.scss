@@ -1,7 +1,30 @@
-td {
-  vertical-align: top;
+@import 'lib/normalize.css';
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  margin: 0;
 }
 
 p {
   margin-top: 0;
+}
+
+table {
+  margin: 0 auto;
+}
+
+th, td {
+  vertical-align: top;
+  padding: 15px;
+}
+
+thead tr {
+  background: #e4e7e6;
+}
+
+tr:nth-child(2n) {
+  background: #f1f3f2;
 }
