@@ -27,64 +27,96 @@ table
 
   tr
     td Allocated_memory_by_gem
-    td = @snapshot.allocated_memory_by_gem
+    td
+      - @snapshot.allocated_memory_by_gem.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_objects_by_gem
-    td = @snapshot.allocated_objects_by_gem
+    td
+      - @snapshot.allocated_objects_by_gem.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_memory_by_gem
-    td = @snapshot.retained_memory_by_gem
+    td
+      - @snapshot.retained_memory_by_gem.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_objects_by_gem
-    td = @snapshot.retained_objects_by_gem
+    td
+      - @snapshot.retained_objects_by_gem.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_memory_by_file
-    td = @snapshot.allocated_memory_by_file
+    td
+      - @snapshot.allocated_memory_by_file.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_objects_by_file
-    td = @snapshot.allocated_objects_by_file
+    td
+      - @snapshot.allocated_objects_by_file.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_memory_by_file
-    td = @snapshot.retained_memory_by_file
+    td
+      - @snapshot.retained_memory_by_file.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_objects_by_file
-    td = @snapshot.retained_objects_by_file
+    td
+      - @snapshot.retained_objects_by_file.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_memory_by_location
-    td = @snapshot.allocated_memory_by_location
+    td
+      - @snapshot.allocated_memory_by_location.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_objects_by_location
-    td = @snapshot.allocated_objects_by_location
+    td
+      - @snapshot.allocated_objects_by_location.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_memory_by_location
-    td = @snapshot.retained_memory_by_location
+    td
+      - @snapshot.retained_memory_by_location.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_objects_by_location
-    td = @snapshot.retained_objects_by_location
+    td
+      - @snapshot.retained_objects_by_location.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_memory_by_class
-    td = @snapshot.allocated_memory_by_class
+    td
+      - @snapshot.allocated_memory_by_class.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Allocated_objects_by_class
-    td = @snapshot.allocated_objects_by_class
+    td
+      - @snapshot.allocated_objects_by_class.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_memory_by_class
-    td = @snapshot.retained_memory_by_class
+    td
+      - @snapshot.retained_memory_by_class.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
 
   tr
     td Retained_objects_by_class
-    td = @snapshot.retained_objects_by_class
+    td
+      - @snapshot.retained_objects_by_class.each do |s|
+        p = "#{s[:data]} - #{s[:count]}"
