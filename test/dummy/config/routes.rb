@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount_memleak "/memleak"
+  mount_memleak '/memleak'
 end

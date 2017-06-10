@@ -7,7 +7,7 @@ class MemProfiler
   end
 
   def call(env)
-    if is_assets_path?(env) or is_engine_action?(env)
+    if is_assets_path?(env) || is_engine_action?(env)
       continue_request env
     else
       make_memory_snapshot env
@@ -83,7 +83,8 @@ class MemProfiler
   end
 
   def get_request_path_params(env)
-    env["action_dispatch.request.path_parameters"]
+    action = env['PATH_INFO']
+    Rails.application.routes.recognize_path action
   end
 
 end
