@@ -7,10 +7,10 @@ class MemProfiler
   end
 
   def call(env)
-    if is_assets_path?(env) || is_engine_action?(env)
-      continue_request env
-    else
+    if can_make_snapshot?(env)
       make_memory_snapshot env
+    else
+      continue_request env
     end
 
     [@status, @headers, @response]
@@ -22,11 +22,15 @@ class MemProfiler
     @status, @headers, @response = @app.call(env)
   end
 
-  def is_assets_path?(env)
+  def can_make_snapshot?(env)
+    assets_path?(env) || engine_action?(env)
+  end
+
+  def assets_path?(env)
     env['REQUEST_PATH'].match /^\/assets\//
   end
 
-  def is_engine_action?(env)
+  def engine_action?(env)
     env['REQUEST_PATH'].match /^\/#{ENGINE_TITLE}/
   end
 
