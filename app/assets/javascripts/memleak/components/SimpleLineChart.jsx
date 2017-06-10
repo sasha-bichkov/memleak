@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, Tooltip, YAxis, CartesianGrid, Legend } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, YAxis, CartesianGrid, Legend } from 'recharts'
 
 
 export default class SimpleLineChart extends React.Component {
