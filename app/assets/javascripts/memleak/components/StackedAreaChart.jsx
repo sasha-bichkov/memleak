@@ -1,9 +1,9 @@
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
 
 export default class StackedAreaChart extends React.Component {
   render () {
-    const { data, area_1, area_2 } = this.props;
+    const { data, area_1, area_2 } = this.props
 
     return (
       <AreaChart
@@ -19,6 +19,6 @@ export default class StackedAreaChart extends React.Component {
         <Area type='monotone' dataKey={area_1} stackId="1" stroke='#ff0000' fill='#ff0000' />
         <Area type='monotone' dataKey={area_2} stackId="1" stroke='#0000ff' fill='#0000ff' />
       </AreaChart>
-    );
+    )
   }
 }
